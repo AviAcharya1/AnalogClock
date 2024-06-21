@@ -1,0 +1,77 @@
+/* Layout */
+.main {
+    display: flex;
+    padding: 2em;
+    height: 90vh;
+    justify-content: center;
+    align-items: center; /* Changed from 'middle' to 'center' */
+    background: linear-gradient(to bottom right, #7b7b7b, #75ebe5); /* Gradient background */
+}
+
+.clockbox,
+#clock {
+    width: 100%;
+}
+
+/* Clock styles */
+.circle {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+    filter: url(#shadow); /* Shadow for the circle */
+}
+
+.mid-circle {
+    fill: #000;
+}
+
+.hour-marks {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.hour-arm {
+    fill: none;
+    stroke: #ff000088; /* Red color for hour hand */
+    stroke-width: 18;
+    stroke-miterlimit: 10;
+}
+
+.minute-arm {
+    fill: none;
+    stroke: #2424efa8; /* Blue color for minute hand */
+    stroke-width: 11;
+    stroke-miterlimit: 10;
+}
+
+.second-arm {
+    fill: none;
+    stroke: #000; /* Black color for second hand */
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+}
+
+/* Transparent box ensuring arms center properly. */
+.sizing-box {
+    fill: none;
+}
+
+/* Make all arms rotate around the same center point. */
+/* Optional: Use transition for animation. */
+#hour,
+#minute,
+#second {
+    transform-origin: 300px 300px;
+    transition: transform .5s ease-in-out;
+}
+
+/* Clock number styles */
+.clock-number {
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+    fill: #ebf0eb; /* Green color for clock numbers */
+    filter: url(#shadow); /* Shadow for numbers */
+}
